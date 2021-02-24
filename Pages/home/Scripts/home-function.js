@@ -126,6 +126,7 @@ function getPosts() {
 
 	$.when(getPostsProcess(id, data)).done(result => {
 		showPosts(result)
+		hideReply("all")
 	})
 }
 
@@ -338,5 +339,31 @@ function hideSearchResult(){
 
 function showSearchResult(data){
 	$("#search-result").html(data)
-	$("#search-result").slideDown();
+	$("#search-result").slideDown()
+}
+
+function hideReply(data) {
+	if(data == "all") {
+		$(".reply").hide()
+	}
+	else{
+		$("#reply-"+data).attr("data-id", "hide")
+		$("#reply-"+data).slideUp()
+	}
+}
+
+function showReply(app) {
+	const id = app.name
+	const value = $("#reply-"+id).attr("data-id")
+
+	if(value == undefined) {
+		$("#reply-"+id).attr("data-id", "hide")
+	}
+	else if(value == "hide") {
+		$("#reply-"+id).attr("data-id", "show")
+		$("#reply-"+id).slideDown()
+	}
+	else {
+		hideReply(id)
+	}
 }
