@@ -249,6 +249,21 @@ html, body {
 		margin-right: 2vh;
 	}
 
+	.reply{
+		width: 90%;
+		font-size: 2vw;
+		margin-left: 5%;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	}
+
+	.replyText{
+		width: 80%;
+		border: 2px solid rgba(38, 71, 78, 1);
+		resize: none;
+		outline: none;
+		font-size: 2vw;
+	}
+
 		/* ----------START NOTIFICATIONS CONTENT---------- */
 
 		.Notifications{
@@ -362,7 +377,19 @@ html, body {
 		    font-size: 120%;
 		}
 
-		.postBtn:hover, .reactBtn:hover, .reactBtn2:hover, .deleteBtn:hover, .replyBtn:hover{
+		.sendReply{
+			width: 6vw;
+			height: 8vh;
+			margin-right: 2%;
+			margin-top: 2%;
+			float: right;
+			background: rgba(255, 255, 255, 1);
+			color: rgba(38, 71, 78, 1);
+			border: none;
+			font-size: 2vw;
+		}
+
+		.postBtn:hover, .reactBtn:hover, .reactBtn2:hover, .deleteBtn:hover, .replyBtn:hover, .sendReply:hover{
 			color: rgba(38, 71, 78, 1);
 			background: rgba(44, 206, 210, 1);
 		}
