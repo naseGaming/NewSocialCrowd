@@ -1,0 +1,121 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    background: rgba(38, 71, 78, 1);
+}
+
+/* ----------START RIGHT PART---------- */
+
+#rightHalf{
+	width: 50vw;
+	height: 100vh;
+    background: rgba(44, 206, 210, 1);
+	float: right;
+	text-align: center;
+}
+
+	/* ----------START IMAGES---------- */
+
+	img{
+		width: 30vw;
+		height: 60vh;
+	}
+	/* ----------END IMAGES---------- */
+/* ----------END RIGHT PART---------- */
+
+/* ----------START FORMS---------- */
+
+#frmLogin{
+	text-align: center;
+	width: 30%;
+	margin-left: 10%;
+	color: rgba(44, 206, 210, 1);
+	border: 2px solid rgba(44, 206, 210, 1);
+}
+
+#frmRegister{
+	text-align: center;
+	width: 30%;
+	margin-left: 10%;
+	color: rgba(53, 120, 229, 1);
+	border: 2px solid rgba(44, 206, 210, 1);
+}
+/* ----------END FORMS---------- */
+
+/* ----------START INPUTS---------- */
+
+.inputs{
+	border: 1px solid rgba(53, 120, 229, 1);
+	height: 5vh;
+	width: 14vw;
+	border-left: 8px solid rgba(44, 206, 210, 1);
+}
+
+.inputsWrong{
+	border: 1px solid rgba(255, 0, 0, 1);
+	height: 5vh;
+	width: 14vw;
+	border-left: 8px solid rgba(242, 115, 75, 1);
+}
+
+.inputs:focus, .inputCode:focus{
+	background: rgba(255, 255, 153, 1);
+	outline: none;
+}
+
+.inputsWrong:focus{
+	background: rgba(255, 255, 153, 1);
+	outline: none;
+}
+
+.inputCode{
+	border: none;
+	height: 5vh;
+	width: 7vw;
+	border-left: 8px solid rgba(53, 120, 229, 1);
+}
+
+.inputCodeBtn{
+	width: 7vw;
+	height: 5vh;
+	border: none;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(53, 120, 229, 1);
+	outline: none;
+}
+/* ----------END INPUTS---------- */
+
+/* ----------START ERROR MESSAGES---------- */
+
+#errR, #err{
+	color: rgba(242, 115, 75, 1);
+}
+/* ----------END ERROR MESSAGES---------- */
+
+/* ----------START BUTTONS---------- */
+
+.buttons{
+	width: 15vw;
+	height: 5vh;
+	border: none;
+	border-radius: 10px 10px 10px 10px;
+	color: rgba(38, 71, 78, 1);
+	background-color: rgba(44, 206, 210, 1);
+	outline: none;
+	border: 1px solid black;
+}
+
+.buttons:hover, .inputCodeBtn:hover{
+	background: rgba(249, 150, 139, 1);
+}
+
+.link{
+	cursor: pointer;
+}
+
+.link:hover{
+	color: rgba(255, 255, 255, 1);
+}
+/* ----------END BUTTONS---------- */

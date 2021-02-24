@@ -1,0 +1,14 @@
+Salmon
+rgb(249, 150, 139)
+
+Tomato
+rgb(242, 115, 75)
+
+Dark State Gray
+rgb(38, 71, 78)
+
+Medium Aquamarine
+rgb(118, 205, 205)
+
+Medium Torquoise
+rgb(44, 206, 210)
