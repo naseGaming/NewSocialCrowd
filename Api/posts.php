@@ -142,11 +142,17 @@
 									<i id = 'reacts2' class='fas fa-thumbs-down'></i> ".$disagreeCtr."
 								</button>";
 							}
-							echo "<button id = 'replyBtn' class = 'replyBtn' >
+							echo "<button data-id = 'hide' id = 'replyBtn' name = '".$row2['Post_Id']."' onClick = 'showReply(this);' class = 'replyBtn' >
 									<i id = 'reacts2' class='fas fa-reply-all'></i>
 								</button>
 								<a class = 'postDate'>".$row2['Post_Date']."</a>
-							</div>";
+							</div>
+								<div id = 'reply-".$row2['Post_Id']."' class = 'reply'>
+									<a>
+										<textarea id = 'postText' class = 'replyText' rows = '2' cols = '50' placeholder = 'Reply'></textarea>
+										<button class = 'sendReply' name = '".$row2['Post_Id']."'>Send</button>
+									</a>
+								</div>";
 						}
 						else{
 							echo "<div class = 'posts'>
@@ -166,12 +172,18 @@
 								<button id = 'disagreeBtn' name = '".$row2['Post_Id']."' onClick = 'disAgreePost(this);' class = 'reactBtn2' >
 									<i id = 'reacts2' class='fas fa-thumbs-down'></i>
 								</button>
-								<button id = 'replyBtn' class = 'replyBtn' >
+								<button data-id = 'hide' id = 'replyBtn' name = '".$row2['Post_Id']."' onClick = 'showReply(this);' class = 'replyBtn' >
 									<i id = 'reacts2' class='fas fa-reply-all'></i>
 								</button>
 								<a class = 'postDate'>".$row2['Post_Date']."</a>
 								</a>
-							</div>";
+							</div>
+								<div id = 'reply-".$row2['Post_Id']."' class = 'reply'>
+									<a>
+										<textarea id = 'postText' class = 'replyText' rows = '2' cols = '50' placeholder = 'Reply'></textarea>
+										<button class = 'sendReply' name = '".$row2['Post_Id']."'>Send</button>
+									</a>
+								</div>";
 						}
 					}
 				}
