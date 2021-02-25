@@ -1,6 +1,6 @@
 <?php
 	require 'config.php';
-
+	//add activity
 	if(isset($_POST["addActivity"])){
 		$id = $_POST['id'];
 		$data = $_POST['data'];
@@ -16,8 +16,8 @@
 			echo "Error Sql";
 		}
 	}
-
-	if(isset($_POST["logout"])){
+	//logout
+	else if(isset($_POST["logout"])){
 		$id = $_POST['id'];
 		$status = "1";
 
