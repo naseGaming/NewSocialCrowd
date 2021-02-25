@@ -1,5 +1,14 @@
 //api requests
 
+function saveActivity(id, data) {
+    $.ajax({
+        type: "POST",
+        url: '/NewSocialCrowd/Api/activities.php',
+        data: jQuery.param({ addActivity: "yes", id: id, data: data }),
+		processData: false
+	})
+}
+
 function getNotifCountProcess(id) {
     return $.ajax({
 		type: "POST",
@@ -36,15 +45,6 @@ function logoutProcess(id) {
 	})
 }
 
-function saveActivity(id, data) {
-    $.ajax({
-        type: "POST",
-        url: '/NewSocialCrowd/Api/activities.php',
-        data: jQuery.param({ addActivity: "yes", id: id, data: data }),
-		processData: false
-	})
-}
-
 function deletePostProcess(id) {
     return $.ajax({
 		type: "POST",
@@ -77,6 +77,15 @@ function searchDataProcess(id, searchData){
 		type: "POST",
         url: '/NewSocialCrowd/Api/search.php',
 		data: jQuery.param({ search: "yes", id: id, searchData: searchData }),
+		processData: false
+	})
+}
+
+function sendReplyProcess(id, postId, replyData){
+    return $.ajax({
+		type: "POST",
+        url: '/NewSocialCrowd/Api/posts.php',
+		data: jQuery.param({ sendReply: "yes", id: id, postId: postId, replyData: replyData }),
 		processData: false
 	})
 }
@@ -223,18 +232,35 @@ function addNotif(searchId, data, dataType){
 	})
 }
 
-function searchData(data){
+function searchData(data) {
 	const id = getInfo.id()
 
 	$.when(searchDataProcess(id, data)).done(result => {
-		if(result == "Error Sql 1"){
+		if(result == "Error Sql 1") {
 			logError("Search Result", result)
 		}
-		else if(result == "Error Sql 2"){
+		else if(result == "Error Sql 2") {
 			logError("Search Result", result)
 		}
-		else{
+		else { 
 			showSearchResult(result)
+		}
+	})
+}
+
+function sendReply(app) {
+	const id = getInfo.id()
+	const postId = app.name
+	const replyData = $("#replyText-"+postId).val()
+
+	$.when(sendReplyProcess(id, postId, replyData)).done(result => {
+		if(result == "Success") {
+			saveActivity(id, "Replied to the/"+postId)
+			clearNewReply(postId)
+			showSuccess("Replied Successfully <i class='fas fa-check-circle'></i>")
+		}
+		else {
+			logError("Send Reply", result)
 		}
 	})
 }
@@ -366,4 +392,8 @@ function showReply(app) {
 	else {
 		hideReply(id)
 	}
+}
+
+function clearNewReply(data) {
+	$("#replyText-"+data).val("")
 }
