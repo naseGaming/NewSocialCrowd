@@ -1,4 +1,5 @@
 <?php
+	//get the posts for the users
 	if(isset($_POST["getposts"])){
 		$id = $_POST['id'];
 		$data = $_POST['data'];
@@ -149,8 +150,8 @@
 							</div>
 								<div id = 'reply-".$row2['Post_Id']."' class = 'reply'>
 									<a>
-										<textarea id = 'postText' class = 'replyText' rows = '2' cols = '50' placeholder = 'Reply'></textarea>
-										<button class = 'sendReply' name = '".$row2['Post_Id']."'>Send</button>
+										<textarea id = 'replyText-".$row2['Post_Id']."' class = 'replyText' rows = '2' cols = '50' placeholder = 'Reply'></textarea>
+										<button class = 'sendReply' name = '".$row2['Post_Id']."' onClick = 'sendReply(this);'>Send</button>
 									</a>
 								</div>";
 						}
@@ -180,8 +181,8 @@
 							</div>
 								<div id = 'reply-".$row2['Post_Id']."' class = 'reply'>
 									<a>
-										<textarea id = 'postText' class = 'replyText' rows = '2' cols = '50' placeholder = 'Reply'></textarea>
-										<button class = 'sendReply' name = '".$row2['Post_Id']."'>Send</button>
+										<textarea id = 'replyText-".$row2['Post_Id']."' class = 'replyText' rows = '2' cols = '50' placeholder = 'Reply'></textarea>
+										<button class = 'sendReply' name = '".$row2['Post_Id']."' onClick = 'sendReply(this);'>Send</button>
 									</a>
 								</div>";
 						}
@@ -193,8 +194,8 @@
 			}
 		}
 	}
-
-	if(isset($_POST["newPost"])){
+	//add post
+	else if(isset($_POST["newPost"])){
 		require 'config.php';
 
 		$id = $_POST['id'];
@@ -228,8 +229,8 @@
 			echo "Logout";
 		}
 	}
-
-	if(isset($_POST["deletePost"])){
+	//deletes posts
+	else if(isset($_POST["deletePost"])){
 		require 'config.php';
 
 		$id = $_POST['id'];
@@ -244,8 +245,8 @@
 			echo "Error Sql 1";
 		}
 	}
-
-	if(isset($_POST["reactPost"])){
+	//add reaction to the post
+	else if(isset($_POST["reactPost"])){
 		require 'config.php';
 
 		$postId = $_POST['postId'];
@@ -298,6 +299,38 @@
 			}
 			else{
 				echo "Error Sql 2";
+			}
+		}
+	}
+	//add reply to the post
+	else if(isset($_POST["sendReply"])){
+		require 'config.php';
+
+		$id = $_POST['id'];
+		$postId = $_POST['postId'];
+		$replyData = $_POST['replyData'];
+		date_default_timezone_set("Asia/Manila");
+		$date = date("Y-m-d h:i:sa");
+
+		$sql = mysqli_query($con,"SELECT * FROM `posts` where `Post_Id` = '$postId' ");
+
+		if($sql){
+			while($row=mysqli_fetch_assoc($sql)){
+				$flag = true;
+			}
+		}
+		else{
+			echo "Post is not existing!";
+		}
+
+		if($flag){
+			$sql2 = mysqli_query($con,"INSERT INTO `replies`(`Post_Id`, `Reply_Sender`, `Reply_Data`, `Reply_Date`) VALUES ('$postId','$id','$replyData','$date')");
+
+			if($sql2){
+				echo "Success";
+			}
+			else{
+				"Error Sending Reply!";
 			}
 		}
 	}
