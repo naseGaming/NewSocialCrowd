@@ -1,6 +1,6 @@
 <?php
 	require 'config.php';
-
+	//get notification count
 	if(isset($_POST["getNotifCount"])){
 		$id = $_POST['id'];
 		$counter = 0;
@@ -18,8 +18,8 @@
 			echo "Error Sql 1";
 		}
 	}
-
-	if(isset($_POST["addNotif"])){
+	//add notifications
+	else if(isset($_POST["addNotif"])){
 		$id = $_POST['id'];
 		$data = $_POST['data'];
 		$dataType = $_POST['dataType'];
