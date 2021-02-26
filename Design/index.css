@@ -91,10 +91,10 @@ html, body {
 	width: 15vw;
 	height: 5vh;
 	border: none;
-	border-radius: 10px 10px 10px 10px;
 	color: rgba(38, 71, 78, 1);
 	background-color: rgba(44, 206, 210, 1);
 	outline: none;
+	border-radius: 10px 10px 10px 10px;
 	border: 1px solid black;
 }
 
