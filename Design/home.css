@@ -22,8 +22,6 @@ html, body {
 	text-align: center;
     margin: 0;
   	position: fixed;
-  	z-index: +1;
-  	box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 	/* ----------START LEFT DIV CONTENTS---------- */
@@ -105,7 +103,6 @@ html, body {
     margin-left: 20%;
     margin-bottom: 1%;
   	position: fixed;
-  	box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 	/* ----------START TOP BAR CONTENTS---------- */
@@ -168,7 +165,7 @@ html, body {
     margin-left: 22%;
     margin-top: 12vh;
     margin-bottom: 1%;
-  	box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.1);
+	border: 2px solid rgba(38, 71, 78, 1);
 }
 
 	/* ----------START POST TOP BAR CONTENTS---------- */
@@ -218,6 +215,7 @@ html, body {
 		text-align: left;
 		font-size: 3vh;
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+		border: 2px solid rgba(38, 71, 78, 1);
 	}
 
 	.userName{
@@ -238,7 +236,7 @@ html, body {
 
 	.postData{
 		height: 40vh;
-		border: 2px solid rgba(38, 71, 78, 1);
+		border-bottom: 2px solid rgba(38, 71, 78, 1);
 		word-wrap: break-word;
 	}
 
@@ -254,6 +252,9 @@ html, body {
 		font-size: 2vw;
 		margin-left: 5%;
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+		border-left: 2px solid rgba(38, 71, 78, 1);
+		border-right: 2px solid rgba(38, 71, 78, 1);
+		border-bottom: 2px solid rgba(38, 71, 78, 1);
 	}
 
 	.replyText{
@@ -292,10 +293,11 @@ html, body {
 			height: 8vh;
 			margin-right: 2px;
 			float: right;
-			background: rgba(255, 255, 255, 1);
 			color: rgba(38, 71, 78, 1);
-			border: none;
+			background: rgba(44, 206, 210, 1);
 			font-size: 2vw;
+			border-radius: 10px 10px 10px 10px;
+			border: 1px solid black;
 		}
 
 		.disabled{
@@ -327,8 +329,8 @@ html, body {
 			margin-top: 1vh;
 			margin-left: 2px;
 			float: left;
-		    background: rgba(44, 206, 210, 1);
-			color: rgba(38, 71, 78, 1);
+			background: rgba(255, 255, 255, 1);
+			color: rgba(44, 206, 210, 1);
 			border: none;
 		}
 
@@ -349,8 +351,8 @@ html, body {
 			margin-top: 1vh;
 			margin-left: 5px;
 			float: left;
-		    background: rgba(44, 206, 210, 1);
-			color: rgba(38, 71, 78, 1);
+			background: rgba(255, 255, 255, 1);
+			color: rgba(44, 206, 210, 1);
 			border: none;
 		}
 
@@ -389,9 +391,19 @@ html, body {
 			font-size: 2vw;
 		}
 
-		.postBtn:hover, .reactBtn:hover, .reactBtn2:hover, .deleteBtn:hover, .replyBtn:hover, .sendReply:hover{
+		.deleteBtn:hover, .replyBtn:hover, .sendReply:hover{
 			color: rgba(38, 71, 78, 1);
 			background: rgba(44, 206, 210, 1);
+		}
+
+		.postBtn:hover, .reactBtn:hover, .reactBtn2:hover {
+			background: rgba(38, 71, 78, 1);
+			color: rgba(44, 206, 210, 1);
+		}
+
+		.reactBtnAct:hover, .reactBtnAct2:hover {
+			background: rgba(44, 206, 210, 1);
+			color: rgba(38, 71, 78, 1);
 		}
 
 		#reacts, #reacts2{
@@ -411,7 +423,6 @@ html, body {
 	text-align: center;
     margin-left: 80%;
   	position: fixed;
-  	box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 #successPost{	
