@@ -249,6 +249,8 @@ function checkInput(regUser, regPass, regConf, regFirst, regMid, regLast, regEma
 //Go to Functions and Hide/Show Functions
 
 function goLogin() {
+    $("#username").val("")
+    $("#password").val("")
     $("#username").removeClass().addClass('inputs')
     $("#password").removeClass().addClass('inputs')
     location.href = "./Pages/home"
