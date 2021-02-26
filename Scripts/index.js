@@ -4,7 +4,7 @@ $(document).ready(function () {
   localStorage.secureCode = secureCode.code
 
   if(status.isIdSet === true) {
-    //goLogin()
+    goLogin()
   }
 
   $("#frmRegister").hide()
